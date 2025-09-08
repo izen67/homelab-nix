@@ -14,6 +14,7 @@
     usbutils
     dnsutils
     pciutils
+    mesa-demos
     gnupg
     openssl
     jq
