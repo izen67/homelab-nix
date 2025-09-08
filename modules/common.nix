@@ -13,6 +13,7 @@
     inetutils
     usbutils
     dnsutils
+    pciutils
     gnupg
     openssl
     jq
