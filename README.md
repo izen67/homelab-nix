@@ -1,5 +1,11 @@
 ### To use:
 
+
+#### CUPS on BMAX:
+```
+sudo nixos-rebuild switch --flake github:izen67/homelab-nix#cups-bmax --refresh
+```
+
 #### Caddy VM:
 ```
 sudo nixos-rebuild switch --flake github:izen67/homelab-nix#caddy-vm --refresh
@@ -30,7 +36,7 @@ sudo nixos-rebuild switch --flake github:izen67/homelab-nix#samba-vm --refresh
 sudo nixos-rebuild switch --flake github:izen67/homelab-nix#zoneminder-vm --refresh
 ```
 
-#### CUPS on BMAX:
+#### Jellyfin VM:
 ```
-sudo nixos-rebuild switch --flake github:izen67/homelab-nix#cups-bmax --refresh
+sudo nixos-rebuild switch --flake github:izen67/homelab-nix#jellyfin-vm --refresh
 ```
