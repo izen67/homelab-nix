@@ -10,6 +10,15 @@
 
       # Example configs
 
+      cups-bmax = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./modules/base-bmax.nix
+          ./modules/common.nix
+          ./services/cups.nix
+        ];
+      };
+
       caddy-vm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -67,14 +76,15 @@
         ];
       };
 
-      cups-bmax = nixpkgs.lib.nixosSystem {
+      jellyfin-vm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./modules/base-bmax.nix
+          ./modules/base-vm.nix
           ./modules/common.nix
-          ./services/cups.nix
+          ./services/jellyfin.nix
         ];
       };
+
     };
   };
 }
