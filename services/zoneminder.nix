@@ -12,25 +12,14 @@
     database.createLocally = true;
   };
 
-  # Create sambazm group
-  users.groups.sambazm = { };
-
   # Samba login user
   users.users.sambazm = {
     isNormalUser = true;
-    extraGroups = [ "sambazm" ];
+    extraGroups = [ "nginx" ];
   };
 
-  # Make sure zoneminder user belongs to sambazm
-  users.users.zoneminder.extraGroups = [ "sambazm" ];
-
   # Also allow your main admin user access
-  users.users.bmax.extraGroups = [ "sambazm" ];
-
-  systemd.tmpfiles.rules = [
-    # Fix ownership/permissions ON THE MOUNTED FS
-    "Z /var/lib/zoneminder 2770 root sambazm -"
-  ];
+  users.users.bmax.extraGroups = [ "nginx" ];
 
   # Samba share
   services.samba = {
@@ -46,7 +35,7 @@
         "guest ok" = false;
         "create mask" = "0770";
         "directory mask" = "0770";
-        "valid users" = [ "@sambazm" ]; # allow group members
+        "valid users" = [ "@nginx" ]; # allow group members
       };
     };
   };
