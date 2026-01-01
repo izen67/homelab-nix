@@ -16,7 +16,6 @@
   # Setup Forgejo
   services.forgejo = {
     enable = true;
-
     database = {
       type = "postgres";
       name = "forgejo";
@@ -27,13 +26,13 @@
 
     settings = {
       server = {
-        DOMAIN = "bmax";          # or your LAN hostname / IP
+        DOMAIN = "192.168.50.53";
         HTTP_PORT = 3000;
-        ROOT_URL = "http://forgejo:3000/";
+        ROOT_URL = "http://192.168.50.53:3000/";
       };
 
       service = {
-        DISABLE_REGISTRATION = true;     # disable public registration after admin creation
+        DISABLE_REGISTRATION = false;     # disable public registration after admin creation
       };
 
       "repository.upload" = {
